@@ -9,7 +9,7 @@ const updateUI = data => {
     document.getElementById('show_temparature').innerText = data.main.temp;
     document.getElementById('weather_status').innerText = data.weather[0].main;
     document.getElementById('icon').setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`);
-    document.getElementById('city').value = ""
+    document.getElementById('city').value = "";
 }
 
 const getWeatherData = city => {
@@ -18,9 +18,9 @@ const getWeatherData = city => {
     .then(data => updateUI(data))
 }
 
-const serachBtn = document.getElementById('search_button');
+const searchBtn = document.getElementById('search_button');
 
-serachBtn.addEventListener('click', () => {
+searchBtn.addEventListener('click', () => {
     const inputCity = document.getElementById('city').value;
     getWeatherData(inputCity)
 })
